@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+
+function handleOnMouseOver(event) {
+  console.log(event)
+  console.log("Pass!")
+}
+
+function handleClick(event) {
+  console.log(event)
+  console.log("Clicado")
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div onMouseOver={handleOnMouseOver}>Pase o mouse por aqui!!</div>
+      <button onClick={handleClick}> Me clique</button>
+
     </div>
   );
 }
