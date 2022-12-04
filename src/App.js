@@ -1,18 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import './App.css';
+import './App.css';
 
 function handleOnMouseOver(event) {
   console.log(event)
@@ -34,4 +20,4 @@ function App() {
   );
 }
 
-export default App;*/
+export default App;
