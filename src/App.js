@@ -13,7 +13,8 @@ import {
   ModalFooter,
 } from "reactstrap";
 
-const dato = [
+
+const data = [
   { id: 1, nombre: "Noel", telefono: "123456789", email: "6010ldaniel@gmail.com"},
   { id: 2, nombre: "Luis", telefono: "123456789", email: "luis@gmail.com"},
   { id: 3, nombre: "Alberto", telefono: "123456789", email: "alberto@gmail.com"},
@@ -23,7 +24,7 @@ const dato = [
 
 class App extends React.Component {
   state = {
-    dato: dato,
+    data: data,
     modalActualizar: false,
     modalInsertar: false,
     form: {
@@ -56,8 +57,8 @@ class App extends React.Component {
   };
 
   editar = (dato) => {
-    var contador = 0;
-    var arreglo = this.state.data;
+    let contador = 0;
+    let arreglo = this.state.data;
     arreglo.map((registro) => {
       if (dato.id === registro.id) {
         arreglo[contador].nombre = dato.nombre;
@@ -107,9 +108,16 @@ class App extends React.Component {
       <>
         <Container>
         <br />
+        <br />
+        <div class="d-block p-2 bg-secondary text-white">
+        <h1>Agenda React</h1>
+        </div>
+        <hr></hr>
+          <br />
           <Button color="success" onClick={()=>this.mostrarModalInsertar()}>Crear</Button>
           <br />
           <br />
+          <hr></hr>
           <Table>
             <thead>
               <tr>
@@ -134,7 +142,7 @@ class App extends React.Component {
                     >
                       Editar
                     </Button>{" "}
-                    <Button color="danger" onClick={()=> this.eliminar(dato)}>Eliminar</Button>
+                    <Button color="secondary" onClick={()=> this.eliminar(dato)}>Eliminar</Button>
                   </td>
                 </tr>
               ))}
@@ -144,7 +152,7 @@ class App extends React.Component {
 
         <Modal isOpen={this.state.modalActualizar}>
           <ModalHeader>
-           <div><h3>Editar Datos</h3></div>
+           <div><h3>Editar</h3></div>
           </ModalHeader>
 
           <ModalBody>
@@ -167,7 +175,7 @@ class App extends React.Component {
               </label>
               <input
                 className="form-control"
-                name="personaje"
+                name="nombre"
                 type="text"
                 onChange={this.handleChange}
                 value={this.state.form.nombre}
@@ -180,7 +188,7 @@ class App extends React.Component {
               </label>
               <input
                 className="form-control"
-                name="anime"
+                name="telefono"
                 type="text"
                 onChange={this.handleChange}
                 value={this.state.form.telefono}
@@ -194,7 +202,7 @@ class App extends React.Component {
               </label>
               <input
                 className="form-control"
-                name="personaje"
+                name="email"
                 type="text"
                 onChange={this.handleChange}
                 value={this.state.form.email}
@@ -240,11 +248,11 @@ class App extends React.Component {
             
             <FormGroup>
               <label>
-                Personaje: 
+                Nombre: 
               </label>
               <input
                 className="form-control"
-                name="personaje"
+                name="nombre"
                 type="text"
                 onChange={this.handleChange}
               />
@@ -252,11 +260,23 @@ class App extends React.Component {
             
             <FormGroup>
               <label>
-                Anime: 
+                Telefono: 
               </label>
               <input
                 className="form-control"
-                name="anime"
+                name="telefono"
+                type="text"
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <label>
+                E-mail: 
+              </label>
+              <input
+                className="form-control"
+                name="email"
                 type="text"
                 onChange={this.handleChange}
               />
