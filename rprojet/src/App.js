@@ -15,10 +15,10 @@ import {
 
 
 const data = [
-  { id: 1, nombre: "Noel", telefono: "123456789", email: "6010ldaniel@gmail.com"},
-  { id: 2, nombre: "Luis", telefono: "123456789", email: "luis@gmail.com"},
-  { id: 3, nombre: "Alberto", telefono: "123456789", email: "alberto@gmail.com"},
-  { id: 4, nombre: "Jose", telefono: "123456789", email: "jose@gmail.com"},
+  { id: 1, nombre: "Noel", telefono: "123456789", email: "6010ldaniel@gmail.com", dia:"15/12/2002", hora:"10:50"},
+  { id: 2, nombre: "Luis", telefono: "123456789", email: "luis@gmail.com", dia:"15/12/2002", hora:"10:50"},
+  { id: 3, nombre: "Alberto", telefono: "123456789", email: "alberto@gmail.com", dia:"15/12/2002", hora:"10:50"},
+  { id: 4, nombre: "Jose", telefono: "123456789", email: "jose@gmail.com", dia:"15/12/2002", hora:"10:50"},
   
 ];
 
@@ -32,6 +32,8 @@ class App extends React.Component {
       nombre: "",
       telefono: "",
       email: "",
+      dia: "",
+      hora: "",
     },
   };
 
@@ -64,6 +66,8 @@ class App extends React.Component {
         arreglo[contador].nombre = dato.nombre;
         arreglo[contador].telefono = dato.telefono;
         arreglo[contador].email = dato.email;
+        arreglo[contador].dia = dato.dia;
+        arreglo[contador].hora = dato.hora;
       }
       contador++;
     });
@@ -110,11 +114,11 @@ class App extends React.Component {
         <br />
         <br />
         <div class="d-block p-2 bg-secondary text-white">
-        <h1>Agenda React</h1>
+        <h1>Lista De Cursos</h1>
         </div>
         <hr></hr>
-          <br />
-          <Button color="success" onClick={()=>this.mostrarModalInsertar()}>Crear</Button>
+          <br/>
+          <Button color="success" onClick={()=>this.mostrarModalInsertar()}>Agendar</Button>
           <br />
           <br />
           <hr></hr>
@@ -125,6 +129,8 @@ class App extends React.Component {
                 <th>Nombre</th>
                 <th>Telefono</th>
                 <th>Email</th>
+                <th>Dia</th>
+                <th>Hora</th>
               </tr>
             </thead>
 
@@ -135,6 +141,8 @@ class App extends React.Component {
                   <td>{dato.nombre}</td>
                   <td>{dato.telefono}</td>
                   <td>{dato.email}</td>
+                  <td>{dato.dia}</td>
+                  <td>{dato.hora}</td>
                   <td>
                     <Button
                       color="primary"
