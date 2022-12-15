@@ -110,10 +110,10 @@ class App extends React.Component {
         <br />
         <br />
         <div class="d-block p-2 bg-secondary text-white">
-        <h1>Agenda React</h1>
+        <h1>Lista De Cursos</h1>
         </div>
         <hr></hr>
-          <br />
+          <br/>
           <Button color="success" onClick={()=>this.mostrarModalInsertar()}>Crear</Button>
           <br />
           <br />
